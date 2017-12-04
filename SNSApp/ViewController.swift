@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func showActivityView(_ sender: UIBarButtonItem) {
+        let controller = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: nil)
+        self.present(controller, animated: true, completion: { () -> Void in
+                                                                print("モーダルビュー表示完了！！！")
+                                                             })
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +26,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
